@@ -1,17 +1,20 @@
 <header>
 	<div class="navbar navbar-default">
 		<div class="navbar-header">
-			<%= image_tag("logo.png", :alt => "TWEETTER", :class => "navbar-brand mnavbar-brand") %>
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+	            <span class="icon-bar"></span>
+        	</button>
+			<% logo = image_tag("logo.png", :alt => "TWEETTER", :class => "navbar-brand mnavbar-brand") %>
+			<%= link_to logo, root_path %>
 		</div>
 		<div class="navbar-collapse collapse navbar-inverse-collapse">
 
 			<ul class="nav navbar-nav navbar-right">
-	            <li class="active"><a href="javascript:void(0)">Home</a>
-	            </li>
-	            <li><a href="javascript:void(0)">Help</a>
-	            </li>
-	            <li><a href="javascript:void(0)">Sign in</a>
-	            </li>
+	            <li><%= link_to "Home", root_path %></li>
+				<li><%= link_to "Help", help_path %></li>
+				<li><%= link_to "Sign in", '#' %></li>
 			</ul>
 		</div>
 	</div>
