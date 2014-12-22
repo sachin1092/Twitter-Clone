@@ -63,3 +63,26 @@ footer nav ul{
 	padding: 5px;
 	margin: 0px;
 }
+
+/* User show page */
+table.profile {
+width: 100%;
+margin-bottom: 0;
+}
+td.main {
+
+padding: 1em;
+}
+
+td.sidebar {
+width: 18%;
+padding: 1em;
+}
+.profile img.gravatar {
+border: 1px solid #999;
+}
+
+.sidebar strong{
+	font-weight: bolder;
+	font-size: 110%;
+}
