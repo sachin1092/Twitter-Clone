@@ -1,17 +1,11 @@
-.container {
-	width: 710px;
-}
 body {
-	background: #cff;
-}
-header {
-	padding-top: 20px;
+	background: #D6EEF8;
 }
 header img {
 	padding: 1em;
-	background: #fff;
+	background: rgba(0,0,0,0.2);
 }
-section {
+/*section {
 	margin-top: 1em;
 	font-size: 120%;
 	padding: 20px;
@@ -19,51 +13,24 @@ section {
 }
 section h1 {
 	font-size: 200%;
-}
+}*/
 /* Links */
-a {
-	color: #09c;
-	text-decoration: none;
-}
-a:hover {
-	color: #069;
-	text-decoration: underline;
-}
-a:visited {
-	color: #069;
-}
+/*a {*/
+	/*color: #09c;*/
+	/*text-decoration: none;*/
+/*}*/
+/*a:hover {*/
+	/*color: #069;*/
+	/*text-decoration: underline;*/
+/*}*/
+/*a:visited {*/
+	/*color: #069;*/
+/*}*/
 
-/* Navigation */
-nav {
-	float: right;
-}
-nav {
-	background-color: white;
-	padding: 0 0.7em;
-	white-space: nowrap;
-}
-nav ul {
-	margin: 0;
-	padding: 0;
-}
-nav ul li {
-	list-style-type: none;
-	display: inline-block;
-	padding: 0.2em 0;
-}
-nav ul li a {
-	padding: 0 5px;
-	font-weight: bold;
-}
-nav ul li a:visited {
-	color: #09c;
-}
-nav ul li a:hover {
-	text-decoration: underline;
-}
+
 
 /* Sign up button */
-a.signup_button {
+/*a.signup_button {
 	margin-left: auto;
 	margin-right: auto;
 	display: block;
@@ -76,13 +43,24 @@ a.signup_button {
 	padding: 20px;
 	border-radius: 3px;
 	text-decoration: none;
+}*/
+
+footer {
+	text-align: center;
+	margin-top: 10px;
+	width: inherit;
+	margin-left: auto;
+	margin-right: auto;
+}
+footer nav {
+	float: left;
 }
 
-a.signup_button:hover {
-	box-shadow: 2px 2px 1px #888888;
+footer nav ul{
+	list-style: none;
 }
 
-a.signup_button:active {
-	border-color: #8BC0DE;
-	border-width: 5px;
+.btn-mstyle{
+	padding: 5px;
+	margin: 0px;
 }
