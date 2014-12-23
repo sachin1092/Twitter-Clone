@@ -3,7 +3,16 @@
 		<%= render 'shared/error_messages', :object => f.object %>
 		<form class="form-horizontal">
 			<fieldset>
-				<legend>Sign up</legend>
+				<legend>Edit user</legend>
+
+				<div class="row" style="margin-left:20px;">
+					<div class="col-lg-2">
+						<%= gravatar_for @user %>
+					</div>
+					<div class="col-lg-10" style="margin-left:-8px;">
+						<a class="btn btn-info" href="http://gravatar.com/emails" target="_blank">change</a>
+					</div>
+				</div>
 				
 				<div class="form-group">
 					<%= f.label :name, :class=>"col-lg-2 control-label"%>
@@ -31,7 +40,7 @@
 				</div>
 				<div class="form-group">
 		            <div class="col-lg-10 col-lg-offset-2">
-		                <%= f.submit "Sign up", :class=>"btn btn-primary"%>
+		                <%= f.submit "Update", :class=>"btn btn-primary"%>
 		            </div>
 		        </div>
 			

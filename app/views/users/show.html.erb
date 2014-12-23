@@ -3,13 +3,13 @@
 		<td class="main">
 			<h1>
 				<%= gravatar_for @user %>
-				<%= @user.name.capitalize %>
+				<%= @user.name.split().each {|x| x.capitalize!}.join(" ") %>
 			</h1>
 		</td>
 
 		<td class="sidebar">
 		
-			<strong>NAME:</strong> <%= @user.name.capitalize %><br />
+			<strong>NAME:</strong> <%= @user.name.split().each {|x| x.capitalize!}.join(" ") %><br />
 			<strong>URL:</strong> <%= link_to user_path(@user), @user %>
 		
 		</td>

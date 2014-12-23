@@ -136,3 +136,22 @@ td.sidebar {
 	margin-bottom:-20px !important; 
 	text-align:end;
 }
+
+ul.users {
+	margin-top: 1em;
+}
+.users li {
+	list-style: none;
+}
+
+.mdelete-btn {
+	font-size: 20pt;
+	text-decoration: none;
+	color:darkgray;
+	vertical-align: text-bottom;
+}
+
+.mdelete-btn:hover {
+	color: #f44336;
+	text-decoration: none;
+}

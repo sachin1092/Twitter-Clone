@@ -29,6 +29,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'gravatar_image_tag'
 
+# gem 'will_paginate'
+
+gem 'will_paginate-bootstrap'
+
 group :production do
   gem 'rails_12factor'
 end
@@ -51,5 +55,7 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+
+  gem 'faker', '0.3.1'
 end
 
