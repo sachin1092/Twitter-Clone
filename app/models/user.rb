@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 	email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password, :password_confirmation)
+		params.require(:user).permit(:name, :email, :password, :password_confirmation, :salt, :encrypted_password)
 	end
 
 	validates :name, :presence => true, 

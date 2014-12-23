@@ -66,23 +66,68 @@ footer nav ul{
 
 /* User show page */
 table.profile {
-width: 100%;
-margin-bottom: 0;
+	width: 100%;
+	margin-bottom: 0;
 }
 td.main {
 
-padding: 1em;
+	padding: 1em;
 }
 
 td.sidebar {
-width: 18%;
-padding: 1em;
+	width: 18%;
+	padding: 1em;
 }
 .profile img.gravatar {
-border: 1px solid #999;
+	border: 1px solid #999;
 }
 
 .sidebar strong{
 	font-weight: bolder;
 	font-size: 110%;
+}
+
+.form-horizontal{
+	width: 50%;
+}
+
+.field_with_errors .form-control-wrapper input {
+	border-color: #F44336;
+	border-width: 2px;
+}
+
+#error_explanation {
+	width: 70%;
+	border: 2px solid #F44336;
+	padding: 10px;
+	padding-bottom: 12px;
+	margin-bottom: 20px;
+	background-color: #F44336;
+}
+#error_explanation h2 {
+	text-align: left;
+	font-weight: bold;
+	padding: 5px 5px 5px 15px;
+	font-size: 15px;
+	margin: -7px;
+	color: #fff;
+}
+#error_explanation p {
+	color: #fff;
+	margin-bottom: 0;
+	padding: 5px;
+}
+#error_explanation ul li {
+	font-size: 12px;
+	list-style: square;
+	color: #fff;
+}
+
+.control-label{
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+
+.form-group {
+	padding: 2%;
 }

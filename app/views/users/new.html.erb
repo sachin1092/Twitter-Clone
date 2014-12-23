@@ -1,2 +1,41 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<%= render 'shared/error_messages' %>
+<div style="width:50%;">
+	<%= form_for(@user) do |f| %>
+		<form class="form-horizontal">
+			<fieldset>
+				<legend>Sign up</legend>
+				
+				<div class="form-group">
+					<%= f.label :name, :class=>"col-lg-2 control-label"%>
+					 <div class="col-lg-10">
+						<%= f.text_field :name, :class=>"form-control", :placeholder=>"Name"%>
+					</div>
+				</div>
+				<div class="form-group ">
+					<%= f.label :email, :class=>"col-lg-2 control-label" %>
+					<div class="col-lg-10">
+						<%= f.text_field :email, :class=>"form-control", :placeholder=>"Email" %>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= f.label :password, :class=>"col-lg-2 control-label" %>
+					<div class="col-lg-10">
+						<%= f.password_field :password, :class=>"form-control", :id=>"inputPassword", :placeholder=>"Password"%>
+					</div>
+				</div>
+				<div class="form-group">
+					<%= f.label :password_confirmation, "Confirmation", :class=>"col-lg-2 control-label" %>
+					<div class="col-lg-10">
+						<%= f.password_field :password_confirmation, :class=>"form-control", :id=>"inputPassword", :placeholder=>"Repeat Password"%>
+					</div>
+				</div>
+				<div class="form-group">
+		            <div class="col-lg-10 col-lg-offset-2">
+		                <%= f.submit "Sign up", :class=>"btn btn-primary"%>
+		            </div>
+		        </div>
+			
+			</fieldset>
+		</form>
+	<% end %>
+</div>
