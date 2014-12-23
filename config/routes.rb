@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
-
   resources :users
+  resources :sessions, :only => [:new, :create, :destroy]
   
   
   get '/home' => 'pages#home'
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get '/about' => 'pages#about'
   get '/help' => 'pages#help'
   get '/signup' => 'users#new'
+  get '/signin' => 'sessions#new'
+  delete '/signout' => 'sessions#destroy'
   
 
   # get 'pages/home'

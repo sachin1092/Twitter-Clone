@@ -1,0 +1,29 @@
+
+<div>
+	<%= form_for(:session, :url => sessions_path) do |f| %>
+	<form class="form-horizontal">
+		<fieldset>
+			<legend>Sign in</legend>
+			<div class="form-group ">
+				<%= f.label :email, :class=>"col-lg-2 control-label" %>
+				<div class="col-lg-10">
+					<%= f.text_field :email, :class=>"form-control", :placeholder=>"Email" %>
+				</div>
+			</div>
+			<div class="form-group">
+				<%= f.label :password, :class=>"col-lg-2 control-label" %>
+				<div class="col-lg-10">
+					<%= f.password_field :password, :class=>"form-control", :id=>"inputPassword", :placeholder=>"Password"%>
+				</div>
+			</div>
+			<div class="form-group">
+	            <div class="col-lg-10 col-lg-offset-2">
+	                <%= f.submit "Sign in", :class=>"btn btn-primary"%>
+	            </div>
+	        </div>
+
+        </fieldset>
+	</form>
+	<% end %>
+    <p class="psignup"><small>New user? <%= link_to "Sign up now!", signup_path, :class=>"btn btn-flat btn-primary" %></small></p>
+</div>
