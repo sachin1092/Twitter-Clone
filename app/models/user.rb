@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 		params.require(:user).permit(:name, :email, :password, :password_confirmation, :salt, :encrypted_password)
 	end
 
+	has_many :microposts, :dependent => :destroy
+
 	validates :name, :presence => true, 
 					:length => { :maximum => 50 }
 	validates :email, :presence => true, 
@@ -36,6 +38,12 @@ class User < ActiveRecord::Base
 	def self.authenticate_with_salt(id, cookie_salt)
 		user = find_by_id(id)
 		(user && user.salt == cookie_salt) ? user : nil
+	end
+
+
+	def feed
+		# This is preliminary. See Chapter 12 for the full implementation.
+		Micropost.where("user_id = ?", id)
 	end
 
 	private

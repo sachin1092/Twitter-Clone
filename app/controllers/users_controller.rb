@@ -18,6 +18,7 @@ class UsersController < ApplicationController
 
   	def show
 		@user = User.find(params[:id])
+		@microposts = @user.microposts.paginate(:page => params[:page])
 		@title = @user.name.split().each {|x| x.capitalize!}.join(" ")
 	end
 
@@ -59,10 +60,6 @@ class UsersController < ApplicationController
 
 		def user_params
 			params.require(:user).permit(:name, :email, :password, :password_confirmation, :salt, :encrypted_password)
-		end
-
-		def authenticate
-			deny_access unless signed_in?
 		end
 
 		def correct_user

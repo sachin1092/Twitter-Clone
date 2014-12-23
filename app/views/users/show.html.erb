@@ -1,17 +1,35 @@
 <table class="profile" summary="Profile information">
 	<tr>
 		<td class="main">
-			<h1>
-				<%= gravatar_for @user %>
-				<%= @user.name.split().each {|x| x.capitalize!}.join(" ") %>
-			</h1>
+			<div class="row">
+				<div class="col-md-1">
+					<%= gravatar_for @user, :size=>150 %>
+				</div>
+				<div class="col-md-10 col-md-offset-1">
+					<h1>
+						<%= @user.name.split().each {|x| x.capitalize!}.join(" ") %>
+					</h1>
+					<div>
+						<strong>URL:</strong> <%= link_to user_path(@user), @user %><br/>
+						<strong>Microposts:</strong> <%= @user.microposts.count %>
+					</div>
+				</div>
+			</div>
+			<br/>
+			<div class="jumbotron micropostjumbo">
+				<h1>Microposts</h1>
+				
+				<% unless @user.microposts.empty? %>
+				<table class="microposts" summary="User microposts">
+					<%= render @microposts %>
+				</table>
+				<% end %>
+			</div>
+			<%= will_paginate @microposts, renderer: BootstrapPagination::Rails %>
+			
+			
 		</td>
 
-		<td class="sidebar">
 		
-			<strong>NAME:</strong> <%= @user.name.split().each {|x| x.capitalize!}.join(" ") %><br />
-			<strong>URL:</strong> <%= link_to user_path(@user), @user %>
-		
-		</td>
 	</tr>
 </table>

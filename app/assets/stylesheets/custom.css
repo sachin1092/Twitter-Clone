@@ -66,7 +66,7 @@ footer nav ul{
 
 /* User show page */
 table.profile {
-	width: 100%;
+	width: 100% !important;
 	margin-bottom: 0;
 }
 td.main {
@@ -154,4 +154,73 @@ ul.users {
 .mdelete-btn:hover {
 	color: #f44336;
 	text-decoration: none;
+}
+
+h1.micropost {
+	margin-bottom: 0.3em;
+}
+
+.bigpic {
+	height: 100px !important; 
+	width:100px !important;
+}
+
+table.microposts {
+	margin-top: 1em;
+	width:100%; !important;
+}
+
+table.microposts tr {
+height: 70px;
+}
+table.microposts tr td.gravatar {
+border-top: 1px solid #ccc;
+vertical-align: top;
+width: 50px;
+}
+table.microposts tr td.micropost {
+border-top: 1px solid #ccc;
+vertical-align: top;
+padding-top: 10px;
+}
+
+table.microposts tr td.micropost .content, table.microposts tr td.micropost .timestamp{
+	margin-left: 2%;
+}
+
+table.microposts tr td.micropost span.timestamp {
+display: block;
+font-size: 85%;
+color: lightgray;
+font-style: italic;
+margin-top: 10px;
+}
+div.user_info img {
+padding-right: 0.1em;
+}
+div.user_info a {
+text-decoration: none;
+}
+div.user_info span.user_name {
+position: absolute;
+}
+div.user_info span.microposts {
+font-size: 80%;
+}
+form.new_micropost {
+margin-bottom: 2em;
+}
+form.new_micropost textarea {
+height: 4em;
+margin-bottom: 0;
+}
+
+.micropostjumbo {
+	background-color: #6B9FF5 !important;
+	color: #fff;
+}
+
+.micropostjumbo h1{
+	color: #fff;
+	margin-bottom: 5%;
 }
