@@ -1,6 +1,5 @@
 <script>
 (function() {
-
     var $button = $("<div id='source-button' class='btn btn-primary btn-xs'>&lt; &gt;</div>").click(function() {
         var index = $('.bs-component').index($(this).parent());
         $.get(window.location.href, function(data) {
@@ -53,23 +52,17 @@
 <script>
 $(function() {
     $.material.init();
-    $(".shor").noUiSlider({
-        start: 40,
-        connect: "lower",
-        range: {
-            min: 0,
-            max: 100
-        }
-    });
 
-    $(".svert").noUiSlider({
-        orientation: "vertical",
-        start: 40,
-        connect: "lower",
-        range: {
-            min: 0,
-            max: 100
-        }
-    });
+    $( ".btn-unfollow" ).hover(
+      function() {
+        $( this ).removeClass( "btn-primary" );
+        $( this ).addClass( "btn-danger" );
+        $(this).attr('value', 'Unfollow');
+      }, function() {
+        $( this ).removeClass( "btn-danger" );
+        $( this ).addClass( "btn-primary" );
+        $(this).attr('value', 'Following');
+      });
 });
 </script>
+

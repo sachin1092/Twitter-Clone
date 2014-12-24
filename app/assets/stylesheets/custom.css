@@ -156,6 +156,18 @@ ul.users {
 	text-decoration: none;
 }
 
+.post-delete-btn {
+	font-size: 20pt;
+	text-decoration: none;
+	color:white;
+	vertical-align: text-bottom;
+}
+
+.post-delete-btn:hover {
+	color: #f44336;
+	text-decoration: none;
+}
+
 h1.micropost {
 	margin-bottom: 0.3em;
 }
@@ -224,3 +236,35 @@ margin-bottom: 0;
 	color: #fff;
 	margin-bottom: 5%;
 }
+
+.btn-unfollow:hover {
+	content:"Unfollow";
+	background-color: #000000;
+}
+
+.stat {
+	text-align: center;
+	display: block;
+}
+
+.user-title a{
+	color: #292F33;
+}
+
+.sidebar {
+	vertical-align: top;
+}
+
+.info-heading {
+	padding: 2%;
+	background-color: #ECECEC;
+}
+
+.info-body {
+	padding: 2%;
+}
+/*
+.panel-back {
+	padding-left: initial;
+	padding-right: initial;
+}*/

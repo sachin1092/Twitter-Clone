@@ -9,9 +9,12 @@
 	<% user = micropost.user rescue User.find(micropost.user_id) %>
 	<% if current_user?(user) %>
 		<td>
-			<%= link_to "delete", micropost, :method => :delete,
+			<!-- <%= link_to "delete", micropost, :method => :delete,
 			:confirm => "You sure?",
-			:title => micropost.content %>
+			:title => micropost.content %> -->
+
+			<%= link_to "", micropost, :method => :delete, :confirm => "You sure?",
+					:title => "Delete Post", :class=>"mdi-action-delete post-delete-btn" %>
 		</td>
 	<% end %>
 </tr>

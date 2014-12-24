@@ -6,14 +6,36 @@
 					<%= gravatar_for @user, :size=>150 %>
 				</div>
 				<div class="col-md-10 col-md-offset-1">
-					<h1>
-						<%= @user.name.split().each {|x| x.capitalize!}.join(" ") %>
+					<h1 class="user-title">
+						<%= link_to @user.name.split().each {|x| x.capitalize!}.join(" "), @user %>
 					</h1>
-					<div>
+					<div class="row">
+					<div class="col-md-6">
 						<%= render 'follow_form' if signed_in? %><br/>
-						<strong>URL:</strong> <%= link_to user_path(@user), @user %><br/>
-						<strong>Microposts:</strong> <%= @user.microposts.count %><br/>
-						<%= render 'shared/stats' %>
+						<!-- <strong>URL:</strong> <%= link_to user_path(@user), @user %><br/> -->
+						<div class="btn-group btn-group-justified">
+						    <a href="javascript:void(0)" class="btn btn-default">
+						    	<strong>MICROPOSTS</strong><br/>
+					    		<span class="stat">
+					    			<%= @user.microposts.count %>
+					    		</span>
+						    </a>
+						    
+						    <a href="<%= following_user_path(@user) %>" class="btn btn-default">
+					    		FOLLOWING<br/>
+								<span id="following" class="stat">
+									<%= @user.following.count %>
+								</span>
+						    </a>
+						    <a href="<%= followers_user_path(@user) %>" class="btn btn-default">
+						    	FOLLOWERS<br/>
+								<span id="followers" class="stat">
+									<%= @user.followers.count %>
+								</span>
+							</a>
+						</div>						
+						<!-- <%= render 'shared/stats' %> -->
+					</div>
 					</div>
 				</div>
 			</div>

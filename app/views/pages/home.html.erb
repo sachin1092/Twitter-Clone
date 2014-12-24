@@ -1,17 +1,18 @@
 <% if signed_in? %>
-	<table class="front" summary="For signed-in users">
-		<tr>
-			<td class="main">
+	<div class="row" summary="For signed-in users">
+		<!-- <tr> -->
+			<div class="col-md-9 col-offset-1">
 				<h1 class="micropost">What's up?</h1>
 				<%= render 'shared/micropost_form' %>
 				<%= render 'shared/feed' %>
-			</td>
-			<td class="sidebar round">
+			<!-- </td> -->
+			</div>
+			<div class="sidebar col-md-3">
 				<%= render 'shared/user_info' %>
-				<%= render 'shared/stats' %>
-			</td>
-		</tr>
-	</table>
+				<!-- <%= render 'shared/stats' %> -->
+			</div>
+		<!-- </tr> -->
+	</div>
 <% else %>
 	<h1>Tweetter</h1>
 	<p>

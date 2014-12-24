@@ -1,24 +1,71 @@
-<table summary="Information about following/followers">
-	<tr>
-		<td class="main">
+<div summary="Information about following/followers" class="row">
+	
+		<div class="main col-md-8">
 			<h1><%= @title %></h1>
-			<% unless @users.empty? %>
-				<ul class="users">
-				<%= render @users %>
-				</ul>
-				<%= will_paginate @users %>
-			<% end %>
-		</td>
-		<td class="sidebar round">
-			<strong>Name</strong> <%= @user.name %><br />
+			<div class="container">
+        		<div class="row">
+					<% unless @users.empty? %>
+						<% @users.each do |user| %>
+							<div class="col-md-3">
+								<a href="<%= user_path(user) %>" title="<%= user.name %>">
+									<p>
+										<%= gravatar_for(user, :size => 150) %>
+										<span style="font-size:10.5pt;">
+											<%= user.name %>
+										</span>
+										<!-- <%= render @users %> -->
+									</p>
+								</a>
+							</div>
+						<% end %>
+					<% end %>
+				</div>
+				<%= will_paginate @users, renderer: BootstrapPagination::Rails %>
+			</div>
+		</div>
+		<div class="sidebar round col-md-4" style="vertical-align: top;">
+			<!-- <strong>Name</strong> <%= @user.name %><br />
 			<strong>URL</strong> <%= link_to user_path(@user), @user %><br />
 			<strong>Microposts</strong> <%= @user.microposts.count %>
-			<%= render 'shared/stats' %>
-			<% unless @users.empty? %>
+			<%= render 'shared/stats' %> -->
+			<div class="jumbotron user_info row">
+			<a href="<%= user_path(@user) %>" class="col-md-5">
+				<%= gravatar_for @user, :size => 102 %>
+			</a>
+			<div class="col-md-7 panel-back">
+				<div class="panel-heading info-heading">
+					<a href="<%= user_path(@user) %>">
+					    	<%= @user.name %>
+					</a>
+				</div>
+			    <div class="panel-body info-body">
+			    	<a href="<%= user_path(@user) %>">
+			        	Microposts: <%= @user.microposts.count %>
+			        </a>
+			    </div>
+			    <div class="panel-body info-body">
+			        <a href="<%= following_user_path(@user) %>">
+						<!-- <span id="following" class="stat"> -->
+						Following: <%= @user.following.count %>
+						<!-- </span> -->
+					</a>
+			    </div>
+			    <div class="panel-body info-body">
+			        <a href="<%= followers_user_path(@user) %>">
+						<!-- <span id="followers" class="stat"> -->
+						Followers: <%= @user.followers.count %>
+						<!-- </span> -->
+					</a>
+			    </div>
+			</div>	
+			</div>
+			<!-- <% unless @users.empty? %>
 				<% @users.each do |user| %>
-					<%= link_to gravatar_for(user, :size => 30), user %>
+				
+					<%= link_to gravatar_for(user, :size => 30), user, :title=>user.name %>
+				
 				<% end %>
-			<% end %>
-		</td>
-	</tr>
-</table>
+			<% end %> -->
+			
+		</div>
+</div>

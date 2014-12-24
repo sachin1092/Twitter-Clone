@@ -1,11 +1,39 @@
-<div class="user_info">
-	<a href="<%= user_path(current_user) %>">
-		<%= gravatar_for current_user, :size => 30 %>
-		<span class="user_name">
+<div class="jumbotron user_info row">
+	<a href="<%= user_path(current_user) %>" class="col-md-5">
+		<%= gravatar_for current_user, :size => 102 %>
+	</a>
+	<div class="col-md-7 panel-back">
+		<div class="panel-heading info-heading">
+			<a href="<%= user_path(current_user) %>">
+			    	<%= current_user.name %>
+			</a>
+		</div>
+	    <div class="panel-body info-body">
+	    	<a href="<%= user_path(current_user) %>">
+	        	Microposts: <%= current_user.microposts.count %>
+	        </a>
+	    </div>
+	    <% @user ||= current_user %>
+	    <div class="panel-body info-body">
+	        <a href="<%= following_user_path(@user) %>">
+				<!-- <span id="following" class="stat"> -->
+				Following: <%= @user.following.count %>
+				<!-- </span> -->
+			</a>
+	    </div>
+	    <div class="panel-body info-body">
+	        <a href="<%= followers_user_path(@user) %>">
+				<!-- <span id="followers" class="stat"> -->
+				Followers: <%= @user.followers.count %>
+				<!-- </span> -->
+			</a>
+	    </div>
+	</div>
+		<!-- <span class="user_name">
 			<%= current_user.name %>
 		</span>
 		<span class="microposts">
 			<%= pluralize(current_user.microposts.count, "micropost") %>
-		</span>
-	</a>
+		</span> -->
+	
 </div>
