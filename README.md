@@ -1,3 +1,19 @@
 #Twitter clone in Ruby on Rails
 
-Sample application to understand and learn ruby on rails
+Tweetter is a Twitter clone build for learning Ruby on Rails.<br/>
+Thanks to <a href="http://www.michaelhartl.com/" target="_black">Michael Hartl</a> for his amazing <a href="" target="_blank">Ruby on Rails Tutorial</a>.
+<br/>
+Build with Ruby 2.1.5 and Rails 4.2.0.
+<br/>
+
+## How to build
+
+Clone the project
+<br/>Navigate to project and run command<br/>
+`bundle install`<br/>
+To start server<br/>
+`rails s`<br/>
+To populate database with faker<br/>
+`rake db:populate`
+
+Feel free to send a pull request. :)
